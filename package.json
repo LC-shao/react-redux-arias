@@ -1,5 +1,5 @@
 {
-  "name": "redux-todos-example",
+  "name": "sss-arias-client",
   "version": "0.0.0",
   "description": "Redux Todos example",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/todos.git"
+    "url": "https://git.oschina.net/blacksheeplucas/arias.git"
   },
   "license": "MIT",
   "dependencies": {
