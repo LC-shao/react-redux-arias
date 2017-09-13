@@ -46,12 +46,12 @@ class VisibleTodoList extends Component {
 }
 
 VisibleTodoList.propTypes = {
-  filter: PropTypes.oneOf(['all', 'active', 'completed']).isRequired,
+  filter: PropTypes.oneOf(['all', 'active', 'completed']),
   errorMessage: PropTypes.string,
-  todos: PropTypes.array.isRequired,
-  isFetching: PropTypes.bool.isRequired,
-  fetchTodos: PropTypes.func.isRequired,
-  toggleTodo: PropTypes.func.isRequired,
+  todos: PropTypes.array,
+  isFetching: PropTypes.bool,
+  fetchTodos: PropTypes.func,
+  toggleTodo: PropTypes.func,
 };
 
 const mapStateToProps = (state, { params }) => {
@@ -60,7 +60,7 @@ const mapStateToProps = (state, { params }) => {
     isFetching: getIsFetching(state, filter),
     errorMessage: getErrorMessage(state, filter),
     todos: getVisibleTodos(state, filter),
-    filter,
+    filter
   };
 };
 
