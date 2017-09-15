@@ -227,90 +227,90 @@ dt.component.popover.arrowOuterColor = '';
 dt.component.popover.distance = '8px';
 
 // Modal
-// --
-@modal-mask-bg: rgba(55, 55, 55, 0.6);
+dt.component.modalMaskBg = 'rgba(55, 55, 55, 0.6)';
 
 // Progress
-// --
-@process-default-color: @primary-color;
-@progress-remaining-color: @background-color-base;
+dt.component.progress = {};
+dt.component.progress.defaultColor =  pallet.primaryColor;
+dt.component.progress.remainingColor =  pallet.primaryItemBgColor;
 
 // Menu
-// ---
-@menu-dark-bg: @layout-header-background;
-@menu-dark-submenu-bg: #333;
-@menu-collapsed-width: 64px;
+
+dt.component.menu = {};
+dt.component.menu.darkBg = dt.component.layout.headerBackground;
+dt.component.menu.darkSubmenuBg = '#333';
+dt.component.menu.collapsedWidith = '64px';
 
 // Spin
-// ---
-@spin-dot-size-sm: 14px;
-@spin-dot-size: 20px;
-@spin-dot-size-lg: 32px;
+dt.component.spin = {};
+dt.component.spin.dotSizeSm = '14px';
+dt.component.spin.dotSize = '20px';
+dt.component.spin.dotSizeLg = '32px';
 
 // Table
-// --
-@table-header-bg: @background-color-base;
-@table-header-sort-bg: @background-color-active;
-@table-row-hover-bg: @primary-1;
-@table-selected-row-bg: #fafafa;
-@table-padding-vertical: 16px;
-@table-padding-horizontal: 8px;
+dt.component.table = {};
+dt.component.table.headerBg = dt.component.backgroundColorBase;
+dt.component.table.headerSortBg = dt.component.backgroundColorActive;
+dt.component.table.rowHoverBg = pallet.primaryOne;
+dt.component.table.selectedRowBg = '#fafafa';
+dt.component.table.paddingVertical = '16px';
+dt.component.table.paddingHorizontal = '8px';
 
 // Tag
-// --
-@tag-default-bg: #f3f3f3;
-@tag-default-color: @text-color;
-@tag-font-size: @font-size-base;
+dt.component.tag = {};
+dt.component.tag.defaultBg = '#f3f3f3';
+dt.component.tag.defaultColor = dt.component.textColor;
+dt.component.tag.fontSize = fontSizeBase;
 
 // TimePicker
-// ---
-@time-picker-panel-column-width: 56px;
-@time-picker-panel-width: @time-picker-panel-column-width * 3;
-@time-picker-selected-bg: @background-color-base;
+dt.component.timePicker = {};
+dt.component.timePicker.panelColumnWidith = '56px';
+dt.component.timePicker.panelWidith = '168px';
+dt.component.timePicker.selectedBg = dt.component.backgroundColorBase;
 
 // Carousel
-// ---
-@carousel-dot-width: 16px;
-@carousel-dot-height: 3px;
-@carousel-dot-active-width: 24px;
+dt.component.carousel = {};
+dt.component.carousel.dotWidth = '16px';
+dt.component.carousel.dotHeight = '3px';
+dt.component.carousel.dotActiveWidth = '24px';
 
 // Badge
-// ---
-@badge-height: 20px;
-@badge-dot-size: 8px;
-@badge-font-size: @font-size-base;
+dt.component.badge = {};
+dt.component.badge.height = '20px';
+dt.component.badge.dotSize = '8px';
+dt.component.badge.fontSize = dt.component.fontSizeBase;
 
 // Rate
-// ---
-@rate-star-color: #f5a623;
-@rate-star-bg: #e9e9e9;
+dt.component.rate = {};
+dt.component.rate.starColor = '#f5a623';
+dt.component.rate.starBg = '#e9e9e9';
 
 // Card
-// ---
-@card-head-height: 48px;
-@card-head-color: @heading-color;
-@card-head-background: @component-background;
+dt.component.card = {};
+dt.component.card.headHight = '48px';
+dt.component.card.headColor = dt.component.headingColor;
+dt.component.card.headeBackground = dt.component.headingColor;
+//@card-head-background: @component-background;
 
 // Tabs
-// ---
-@tabs-card-head-background: #f9f9f9;
-@tabs-title-font-size: @font-size-lg;
+dt.component.tabs = {};
+dt.component.tabs.cardHeadBackground = '#f9f9f9';
+dt.component.tabs.titleFontSize =  dt.component.fontSizeLarge;
 
 // BackTop
-@back-top-color: #fff;
-@back-top-bg: rgba(64, 64, 64, 0.4);
-@back-top-hover-bg: rgba(64, 64, 64, 0.6);
+dt.component.backTop = {};
+dt.component.backTop.topColor = '#fff';
+dt.component.backTop.topBg = 'rgba(64, 64, 64, 0.4)';
+dt.component.backTop.topHoverBg = 'rgba(64, 64, 64, 0.6)';
 
 // Avatar
-@avatar-size-base: 32px;
-@avatar-size-lg: 40px;
-@avatar-size-sm: 24px;
-@avatar-font-size-base: 18px;
-@avatar-font-size-lg: 24px;
-@avatar-font-size-sm: 14px;
-@avatar-bg: #ccc;
-@avatar-color: #fff;
-@avatar-border-radius: @border-radius-base;
-};
-	}
-}
+dt.component.avatar = {};
+dt.component.avatar.sizeBase = '32px';
+dt.component.avatar.sizeLg = '40px';
+dt.component.avatar.sizeSm = '24px';
+dt.component.avatar.fontSizeBase = '32px';
+dt.component.avatar.fontSizeLg = '24px';
+dt.component.avatar.fontSizeSm = '14px';
+dt.component.avatar.bg = '#ccc';
+dt.component.avatar.color = '#fff';
+dt.component.avatar.borderRadius = dt.component.borderRadiusBase;
