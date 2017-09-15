@@ -1,4 +1,4 @@
-import color from 'color';
+import color from 'tinycolor2';
 import palletDefault from '../pallet/palletDefault';
 import {addPrimaryColor} from './themeUtils';
 
@@ -17,12 +17,12 @@ dt.component.background= pallet.primaryBgColor;
 dt.component.fontFamily= '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif';
 dt.component.fontForNumber= '"Helvetica Neue For Number"';
 dt.component.fontForCode= 'Consolas, Menlo, Courier, monospace';
-dt.component.headingColor= color(pallet.primaryBgColor).darken(0.15);
-dt.component.textColor= color(pallet.primaryTextColor).fade(0.65);
-dt.component.textColorSecondary= color(pallet.primaryTextColor).fade(0.43);
-dt.component.headingColorDark= color(pallet.primaryBgColor).fade(0.97);
-dt.component.textColorDark= color(pallet.primaryBgColor).fade(0.91);
-dt.component.textColorSecondaryDark= color(pallet.primaryBgColor).fade(0.67);
+dt.component.headingColor= color(pallet.primaryBgColor).darken(0.15).toString();
+dt.component.textColor= color(pallet.primaryTextColor).setAlpha(0.65).toString();
+dt.component.textColorSecondary= color(pallet.primaryTextColor).setAlpha(0.43).toString();
+dt.component.headingColorDark= color(pallet.primaryBgColor).setAlpha(0.97).toString();
+dt.component.textColorDark= color(pallet.primaryBgColor).setAlpha(0.91).toString();
+dt.component.textColorSecondaryDark= color(pallet.primaryBgColor).setAlpha(0.67).toString();
 dt.component.fontSizeBase= '12px';
 dt.component.fontSizeLarge= '14px';
 dt.component.lineHeightBase= 1.5;
@@ -61,7 +61,7 @@ dt.component.animation.easeInOutQunit= 'cubic-bezier(0.86, 0, 0.07, 1)';
 
 // Border style
 dt.component.borderColorBase= pallet.borderColorBase;
-dt.component.borderColorSplit= color(pallet.borderColorBase).darken(0.1);
+dt.component.borderColorSplit= color(pallet.borderColorBase).darken(0.1).toString();
 dt.component.borderWidthBase= '1px';
 dt.component.borderStyleBase= 'solid';
 
@@ -73,179 +73,158 @@ dt.component.outlineColor= pallet.primaryColor;
 // Default background color for disabled states, Collapse wrappers,
 // and several active and hover states.
 dt.component.backgroundColorBase= pallet.primaryItemBgColor;
-dt.component.backgroundColorActive= color(pallet.primaryItemBgColor).darken(0.07);
+dt.component.backgroundColorActive= color(pallet.primaryItemBgColor).darken(0.07).toString();
 
 // Disabled states
-dt.component.disableColor= color(pallet.black).fade(0.25);
+dt.component.disableColor= color(pallet.black).setAlpha(0.25).toString();
 dt.component.disableBg=dt.component.backgroundColorBase;
-dt.component.disableColorDark = color(pallet.white).fade(0.35);
+dt.component.disableColorDark = color(pallet.white).setAlpha(0.35).toString();
 
-// Shadow
-@shadow-color           : rgba(0, 0, 0, .2);
-@box-shadow-base        : @shadow-1-down;
-@shadow-1-up            : 0 -1px 6px @shadow-color;
-@shadow-1-down          : 0 1px 6px @shadow-color;
-@shadow-1-left          : -1px 0 6px @shadow-color;
-@shadow-1-right         : 1px 0 6px @shadow-color;
-@shadow-2               : 0 2px 8px @shadow-color;
+dt.component.shadow={};
+dt.component.shadow.shadowColor = 'rgba(0, 0, 0, .2)';
+dt.component.shadow.boxShadowBase = '0 1px 6px rgba(0, 0, 0, .2)';
+dt.component.shadow.shadowUp = '0 -1px 6px rgba(0, 0, 0, .2)';
+dt.component.shadow.shadowDown = '0 1px 6px rgba(0, 0, 0, .2)';
+dt.component.shadow.shadowLeft = '-1px 0 6px rgba(0, 0, 0, .2)';
+dt.component.shadow.shadowRight = '1px 0 6px rgba(0, 0, 0, .2)';
+dt.component.shadow.shadowTwo = '0 2px 8px rgba(0, 0, 0, .2)';
 
-// Buttons
-@btn-font-weight        : 500;
-@btn-border-radius-base : @border-radius-base;
-@btn-border-radius-sm   : @border-radius-base;
-
-@btn-primary-color      : #fff;
-@btn-primary-bg         : @primary-color;
-
-@btn-default-color      : @text-color;
-@btn-default-bg         : #fff;
-@btn-default-border     : @border-color-base;
-
-@btn-danger-color       : @error-color;
-@btn-danger-bg          : @background-color-base;
-@btn-danger-border      : @border-color-base;
-
-@btn-disable-color      : @disabled-color;
-@btn-disable-bg         : @disabled-bg;
-@btn-disable-border     : @border-color-base;
-
-@btn-padding-base       : 0 15px;
-@btn-font-size-lg       : @font-size-lg;
-@btn-padding-lg         : @btn-padding-base;
-@btn-padding-sm         : 0 7px;
-
-@btn-height-base        : 28px;
-@btn-height-lg          : 32px;
-@btn-height-sm          : 22px;
-
-@btn-circle-size        : @btn-height-base;
-@btn-circle-size-lg     : @btn-height-lg;
-@btn-circle-size-sm     : @btn-height-sm;
-
-@btn-group-border       : @primary-7;
-
-// Radio buttons
-@radio-button-bg           : @btn-default-bg;
-@radio-button-color        : @btn-default-color;
+//Button
+dt.component.button={};
+dt.component.button.btnFontWeight = 500;
+dt.component.button.btnBorderRadiusBase = dt.component.borderRadiusBase;
+dt.component.button.btnBorderRadiusSm = dt.component.borderRadiusBase;
+dt.component.button.btnPrimatyColor = '#fff';
+dt.component.button.btnPrimatyBg = '#000';
+dt.component.button.btnDefaultColor = dt.component.textColor;
+dt.component.button.btnDefaultBg = "#fff";
+dt.component.button.btnDefaultBorder = dt.component.borderColorBase;
+dt.component.button.btndangerColor = pallet.errorColor;
+dt.component.button.btndangerBg = dt.component.backgroundColorBase;
+dt.component.button.btndangerBorder = dt.component.borderColorBase;
+dt.component.button.btnDisableColor = dt.component.disableColor;
+dt.component.button.btnDisableBg = dt.component.disableBg;
+dt.component.button.btnDisableBorder = dt.component.borderColorBase;
+dt.component.button.btnPaddingBase = '0 15px';
+dt.component.button.btnfontSizeLg = dt.component.fontSizeLarge;
+dt.component.button.btnPaddingLg = '0 15px';
+dt.component.button.btnPaddingSm = '0 7px';
+dt.component.button.btnHeightBase = '28px';
+dt.component.button.btnHeightLg = '32px';
+dt.component.button.btnHeightSm = '22px';
+dt.component.button.btnCircleSize = dt.component.button.btnHeightBase;
+dt.component.button.btnCircleSizeLg = dt.component.button.btnHeightLg;
+dt.component.button.btnCircleSizeSm = dt.component.button.btnHeightSm;
+dt.component.button.btnGroupBorder = pallet.primarySeven;
+dt.component.button.radioButtonBg = dt.component.button.btnDefaultBg;
+dt.component.button.radioButtonColor = dt.component.button.btnDefaultColor;
 
 // Media queries breakpoints
 // Extra small screen / phone
-@screen-xs              : 480px;
-@screen-xs-min          : @screen-xs;
+dt.component.screen={};
+dt.component.screen.xs = '480px';
+dt.component.screen.sm = '768px';
+dt.component.screen.md = '992px';
+dt.component.screen.lg = '1200px';
+dt.component.screen.xl = '1600px';
 
-// Small screen / tablet
-@screen-sm              : 768px;
-@screen-sm-min          : @screen-sm;
+dt.component.screen.xsMin = '480px';
+dt.component.screen.smMin = '768px';
+dt.component.screen.mdMin = '992px';
+dt.component.screen.lgMin = '1200px';
+dt.component.screen.xlMin = '1600px';
 
-// Medium screen / desktop
-@screen-md              : 992px;
-@screen-md-min          : @screen-md;
-
-// Large screen / wide desktop
-@screen-lg              : 1200px;
-@screen-lg-min          : @screen-lg;
-
-// Extra Large screen / full hd
-@screen-xl              : 1600px;
-@screen-xl-min          : @screen-xl;
-
-// provide a maximum
-@screen-xs-max          : (@screen-sm-min - 1px);
-@screen-sm-max          : (@screen-md-min - 1px);
-@screen-md-max          : (@screen-lg-min - 1px);
-@screen-lg-max          : (@screen-xl-min - 1px);
+dt.component.screen.xsMin = '479';
+dt.component.screen.smMin = '767px';
+dt.component.screen.mdMin = '991px';
+dt.component.screen.lgMin = '1119px';
+dt.component.screen.xlMin = '1599px';
 
 // Grid system
-@grid-columns           : 24;
-@grid-gutter-width      : 0;
+dt.component.GridColumns = 24;
+dt.component.GridGutterWidth = 0;
 
 // Layout
-@layout-body-background      : #ececec;
-@layout-header-background    : #404040;
-@layout-header-height        : 64px;
-@layout-header-padding       : 0 50px;
-@layout-footer-padding       : 24px 50px;
-@layout-sider-background     : @layout-header-background;
-@layout-trigger-height       : 48px;
-@layout-trigger-background   : tint(@heading-color, 20%);
-@layout-trigger-color        : #fff;
-@layout-zero-trigger-width   : 36px;
-@layout-zero-trigger-height  : 42px;
+
+dt.component.layout = {};
+dt.component.layout.bodyBackground = '#ececec';
+dt.component.layout.headerBackground = '#404040';
+dt.component.layout.headerHeight = '64px';
+dt.component.layout.headerPadding = '0 50px';
+dt.component.layout.footerPadding = '24px 50px';
+dt.component.layout.siderBackground = dt.component.layout.headerBackground;
+dt.component.layout.triggerHeight = '48px';
+//@layout-trigger-background   : tint(@heading-color, 20%);
+dt.component.layout.triggerBackground = '';
+dt.component.layout.triggerColor = '#fff';
+dt.component.layout.zeroTriggerWidth = '36px';
+dt.component.layout.zeroTriggerHeight = '42px';
+
 
 // z-index list
-@zindex-affix           : 10;
-@zindex-back-top        : 10;
-@zindex-modal-mask      : 1000;
-@zindex-modal           : 1000;
-@zindex-notification    : 1010;
-@zindex-message         : 1010;
-@zindex-popover         : 1030;
-@zindex-picker          : 1050;
-@zindex-dropdown        : 1050;
-@zindex-tooltip         : 1060;
+dt.component.zIndex = {};
+dt.component.zIndex.Affix = 10;
+dt.component.zIndex.backTop = 10;
+dt.component.zIndex.modalMask = 1000;
+dt.component.zIndex.modal = 1000;
+dt.component.zIndex.notification = 1010;
+dt.component.zIndex.message = 1010;
+dt.component.zIndex.popover = 1030;
+dt.component.zIndex.picker = 1050;
+dt.component.zIndex.dropDown = 1050;
+dt.component.zIndex.toolTip = 1060;
 
 // Animation
-@animation-duration-slow: .3s; // Modal
-@animation-duration-base: .2s;
-@animation-duration-fast: .1s; // Tooltip
+dt.component.animation.durationSlow = '.3s';// Modal
+dt.component.animation.durationBase = '.2s';
+dt.component.animation.durationFast = '.1s'; // Tooltip
 
 // Form
-// ---
-@label-required-color        : @highlight-color;
-@label-color                 : @heading-color;
-@form-item-margin-bottom     : 24px;
-@form-item-trailing-colon    : true;
+dt.component.from={};
+dt.component.from.labelRequiredColor = '';
+// ---@label-required-color        : @highlight-color;
+dt.component.from.labelColor = dt.component.headingColor;
+dt.component.from.itemMarginBottom = '24px';
+dt.component.from.itemTrailingColon = true;
 
 // Input
-// ---
-@input-height-base           : 28px;
-@input-height-lg             : 32px;
-@input-height-sm             : 22px;
-@input-padding-horizontal    : 7px;
-@input-padding-vertical-base : 4px;
-@input-padding-vertical-sm   : 1px;
-@input-padding-vertical-lg   : 6px;
-@input-placeholder-color     : @disabled-color;
-@input-color                 : @text-color;
-@input-border-color          : @border-color-base;
-@input-bg                    : #fff;
-@input-addon-bg              : #eee;
-@input-hover-border-color    : @primary-color;
-@input-disabled-bg           : @disabled-bg;
+dt.component.input={};
+dt.component.input.heightBase = '28px';
+dt.component.input.heightLg = '32px';
+dt.component.input.heightSm = '22px';
+dt.component.input.paddingHorizontal = '7px';
+dt.component.input.paddingVerticalBase = '4px';
+dt.component.input.paddingVerticalSm = '1px';
+dt.component.input.paddingVerticalLg = '6px';
+dt.component.input.placeholder = '#ccc';
+dt.component.input.color = dt.component.textColor;
+dt.component.input.borderColor = pallet.borderColorBase;
+dt.component.input.bg = '#fff';
+dt.component.input.addonBg = '#eee';
+dt.component.input.hoverBorderColor = pallet.borderColorBase;
+dt.component.input.disabledBg = '';
+//@input-disabled-bg           : @disabled-bg;
 
 // Tooltip
-// ---
-//* Tooltip max width
-@tooltip-max-width: 250px;
-//** Tooltip text color
-@tooltip-color: #fff;
-//** Tooltip background color
-@tooltip-bg: rgba(0, 0, 0, .75);
-//** Tooltip arrow width
-@tooltip-arrow-width: 5px;
-//** Tooltip distance with trigger
-@tooltip-distance: @tooltip-arrow-width - 1px + 4px;
-//** Tooltip arrow color
-@tooltip-arrow-color: @tooltip-bg;
+dt.component.tooltip={};
+dt.component.tooltip.maxWidth = '250px';
+dt.component.tooltip.color = '#fff';
+dt.component.tooltip.bg = 'rgba(0, 0, 0, .75)';
+dt.component.tooltip.arrowWidth = '5px';
+dt.component.tooltip.distance = '8px';
+dt.component.tooltip.arrowColor = 'rgba(0, 0, 0, .75)';
 
 // Popover
-// ---
-//** Popover body background color
-@popover-bg: #fff;
-//** Popover text color
-@popover-color: @text-color;
-//** Popover maximum width
-@popover-min-width: 177px;
-//** Popover arrow width
-@popover-arrow-width: 4px;
-//** Popover arrow color
-@popover-arrow-color: @popover-bg;
-//** Popover outer arrow width
-@popover-arrow-outer-width: (@popover-arrow-width + 1px);
-//** Popover outer arrow color
-@popover-arrow-outer-color: fadeout(@border-color-base, 30%);
-//** Popover distance with trigger
-@popover-distance: @popover-arrow-width + 4px;
+dt.component.popover={};
+dt.component.popover.bg = '#fff';
+dt.component.popover.color = dt.component.textColor;
+dt.component.popover.minWidth = '177px';
+dt.component.popover.arrowColor = dt.component.popover.bg;
+dt.component.popover.arrowWidth = '4px';
+dt.component.popover.arrowOuterWidth = '5px';
+dt.component.popover.arrowOuterColor = '';
+//@popover-arrow-outer-color: fadeout(@border-color-base, 30%);
+dt.component.popover.distance = '8px';
 
 // Modal
 // --
