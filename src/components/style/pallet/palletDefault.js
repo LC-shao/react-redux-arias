@@ -18,15 +18,19 @@ import {
 } from './colors';
 
 export default {
-	primaryItemColor: Azure,
+	primaryColor: Azure,
 	primaryTextColor: Black,
-	primaryBackgroundColor: White,
+	primaryBgColor: White,
+	primaryItemBgColor: HintOfRed,
 	secondaryItemColor: BlueGreen,
 	secondaryTextColor: Vulcan,
-	secondaryBackgroundColor: FrenchGray,
+	secondaryBgColor: FrenchGray,
 	successColor: Eucalyptus,
 	InfoColor: BlueGreen,
 	errorColor: Jasper,
 	warningColor: MikadoYellow,
-
+	separatorColor: HintOfRed,
+	borderColorBase: HintOfRed,
+	black: Black,
+	white: White,
 };
