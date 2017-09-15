@@ -1,9 +1,9 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import {} from './components';
+import {Button} from './components';
 
 render(
-	<App />,
+	<Button></Button>,
 	document.getElementById('root')
 );

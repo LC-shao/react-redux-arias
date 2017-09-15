@@ -21,6 +21,7 @@ export default {
 	primaryColor: Azure,
 	primaryTextColor: Black,
 	primaryBgColor: White,
+	primaryItemBgColor: HintOfRed,
 	secondaryItemColor: BlueGreen,
 	secondaryTextColor: Vulcan,
 	secondaryBgColor: FrenchGray,
@@ -29,4 +30,7 @@ export default {
 	errorColor: Jasper,
 	warningColor: MikadoYellow,
 	separatorColor: HintOfRed,
+	borderColorBase: HintOfRed,
+	black: Black,
+	white: White,
 };

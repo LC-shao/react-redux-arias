@@ -1,6 +1,5 @@
 import color from 'tinycolor2';
 
-
 export const addPrimaryColor = (primaryColor) => (
 	{
 		primaryOne: color(primaryColor).setAlpha(0.1).toString(),

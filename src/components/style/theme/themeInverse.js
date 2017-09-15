@@ -1,7 +1,11 @@
 import palletInverse from '../pallet/palletInverse';
-import themeDefault from './themeDefault';
+import {addPrimaryColor} from "./themeUtils";
+import themeGenerator from "./themeGenerator";
 
-export default {
-	...themeDefault,
-	pallet: palletInverse,
+const pallet = {
+	palletInverse,
+	...addPrimaryColor(palletInverse.primaryColor),
 };
+
+// defaultTheme
+export default themeGenerator(pallet);

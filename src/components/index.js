@@ -7,8 +7,10 @@ if (ENV !== 'production' &&
 	console.warn &&
 	typeof window !== 'undefined') {
 	console.warn(
-		'You are using a whole package of antd, ' +
+		'You are using a whole package of airas-ui, ' +
 		'please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.',
 	);
 }
 /* @remove-on-es-build-end */
+
+export {default as Button} from './Button';

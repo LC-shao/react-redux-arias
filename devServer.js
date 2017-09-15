@@ -8,6 +8,7 @@ const app = new Express();
 const port = 3000;
 
 const compiler = webpack(config);
+
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath,
