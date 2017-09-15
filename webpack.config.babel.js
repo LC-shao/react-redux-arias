@@ -2,12 +2,18 @@ import path from 'path';
 
 export default {
   devtool: 'eval',
-  entry: './src/index',
+  entry: [
+    'webpack-hot-middleware/client',
+		'./src/index',
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/',
   },
+  plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+  ],
   module: {
     loaders: [{
       test: /\.js$/,
