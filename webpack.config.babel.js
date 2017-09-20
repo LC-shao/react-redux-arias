@@ -1,9 +1,14 @@
 import path from 'path';
+import webpack from 'webpack';
 
 export default {
   devtool: 'eval',
   entry: [
-		'./src/index',
+    './src/index',
+    'webpack-hot-middleware/client',
+  ],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
     path: path.join(__dirname, 'dist'),

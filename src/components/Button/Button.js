@@ -6,7 +6,7 @@ import {themeDefault as theme} from '../style'
 
 export default class Button extends Component {
 
-	state = {
+	static state = {
 		disabled: false
 	};
 
@@ -30,8 +30,6 @@ export default class Button extends Component {
 			style
 		} = this.props;
 
-		console.log(theme);
-
 		const styles = reactCSS({
 			'default': {
 				card: {
@@ -43,7 +41,7 @@ export default class Button extends Component {
 		});
 
 		return (
-			<button disabled={disabled} style={styles.card}>
+			<button disabled={disabled}>
 				{children}
 			</button>
 		)
